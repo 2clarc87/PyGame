@@ -7,7 +7,7 @@ class Car:
         self.wheels = wheels
 
     def printAll(self):
-        print("Type: ", type, "\nAge: ", age, "\nWheels: ", wheels)
+        print("Type: ", self.type, "\nAge: ", self.age, "\nWheels: ", self.wheels)
 
     def getAge(self):
         return self.age
@@ -26,10 +26,10 @@ while True:
         type = input("What type of car is it: ")
         age = int(input("How old is the car: "))
         wheels = int(input("How many wheels does it have: "))
-        myCars.insert(index, Car(type, wheels, age))
+        myCars.append(Car(type, wheels, age))
         index = index + 1
     elif option == 2:
-        option2 = int(input("Which car do you want to look at: "))
+        option2 = int(input("Which car do you want to look at: "))-1
         myCars[option2].printAll()
     else:
         break
